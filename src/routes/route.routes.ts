@@ -1,13 +1,9 @@
 import express from 'express';
-// import createDishes from '../controllers/dishes.controller';
-
-console.log('ROUTE')
+import {createDishes, getDishes} from '../controllers/dishes.controller';
 
 const router = express.Router();
 
-router.post('/dishes', (req, res) => {
-  console.log(req.body);
-  res.send('POST dishes');
-});
+router.post('/dish', createDishes);
+router.get('/dishes', getDishes);
 
 export default router;
